@@ -187,9 +187,90 @@ body {
     color: #333;
 }
 
+/* About Section */
+.about-section {
+    padding: 60px 20px;
+    background-color: white;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #d32f2f;
+    text-align: center;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 /* Menu Items */
 .menu-category {
     margin-bottom: 40px;
+}
+
+.menu-info {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.menu-info h3 {
+    color: #d32f2f;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.menu-info h3:first-child {
+    margin-top: 0;
+}
+
+.menu-info p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.category-note {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.menu-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    gap: 15px;
+}
+
+.menu-list-item .item-name {
+    flex: 1;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.menu-list-item .item-price {
+    font-weight: bold;
+    color: #d32f2f;
+    font-size: 1rem;
+    white-space: nowrap;
 }
 
 .menu-items {
