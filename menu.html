@@ -9,11 +9,25 @@
 <body>
     <div id="navbar-placeholder"></div>
 
+    <!-- Menu Sub-Navigation -->
+    <nav class="menu-subnav">
+        <div class="subnav-container">
+            <a href="#hamburgers" class="subnav-link">Hamburgers</a>
+            <a href="#hot-dogs" class="subnav-link">Hot Dogs</a>
+            <a href="#sandwiches" class="subnav-link">Sandwiches</a>
+            <a href="#appetizers" class="subnav-link">Appetizers</a>
+            <a href="#soups-salads" class="subnav-link">Soups & Salads</a>
+            <a href="#entrees" class="subnav-link">Entrees</a>
+            <a href="#kids" class="subnav-link">Kids Meals</a>
+            <a href="#desserts" class="subnav-link">Desserts & Drinks</a>
+        </div>
+    </nav>
+
     <main>
         <section class="content-section">
             <div class="container">
                 <h1>Our Menu</h1>
-                <p>Delicious food made fresh daily</p>
+                <p>Delicious food made to order</p>
 
                 <div class="menu-info">
                     <h3>Sandwich Baskets</h3>
@@ -23,7 +37,7 @@
                     <p>$0.50 To add extra cheese to any sandwich.</p>
                 </div>
 
-                <div class="menu-category">
+                <div class="menu-category" id="hamburgers">
                     <h2>Hamburgers</h2>
                     <div class="menu-list">
                         <div class="menu-list-item">
@@ -83,25 +97,37 @@
                             <span class="item-price">$8.99</span>
                         </div>
                         <div class="menu-list-item">
-                            <span class="item-name">Chiliburger - Hamburger with Hot Dog Sauce</span>
+                            <span class="item-name">
+                                <span class="item-title">Chiliburger</span>
+                                <span class="item-description">Hamburger with Hot Dog Sauce</span>
+                            </span>
                             <span class="item-price">$4.20</span>
                         </div>
                         <div class="menu-list-item">
-                            <span class="item-name">Double Chiliburger - Double Hamburger with Hot Dog Sauce</span>
+                            <span class="item-name">
+                                <span class="item-title">Double Chiliburger</span>
+                                <span class="item-description">Double Hamburger with Hot Dog Sauce</span>
+                            </span>
                             <span class="item-price">$6.50</span>
                         </div>
                         <div class="menu-list-item">
-                            <span class="item-name">Sonnyburger - 2 Hamburgers with Onion, Pickle, Slaw, Tomato, Special Cheese Sauce</span>
+                            <span class="item-name">
+                                <span class="item-title">Sonnyburger</span>
+                                <span class="item-description">2 Hamburgers with Onion, Pickle, Slaw, Tomato, Special Cheese Sauce</span>
+                            </span>
                             <span class="item-price">$6.49</span>
                         </div>
                         <div class="menu-list-item">
-                            <span class="item-name">Billyburger - Bacon Cheeseburger with a Fried Chicken Patty & Special Cheese Sauce</span>
+                            <span class="item-name">
+                                <span class="item-title">Billyburger</span>
+                                <span class="item-description">Bacon Cheeseburger with a Fried Chicken Patty & Special Cheese Sauce</span>
+                            </span>
                             <span class="item-price">$6.99</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="menu-category">
+                <div class="menu-category" id="hot-dogs">
                     <h2>Hot Dogs</h2>
                     <p class="category-note">Homemade sauce recipe since 1957</p>
                     <div class="menu-list">
@@ -129,7 +155,7 @@
                     <p class="category-note">Try our taco dog w/ sour cream!</p>
                 </div>
 
-                <div class="menu-category">
+                <div class="menu-category" id="sandwiches">
                     <h2>Sandwiches</h2>
                     <div class="menu-list">
                         <div class="menu-list-item">
@@ -149,7 +175,10 @@
                             <span class="item-price">$4.00</span>
                         </div>
                         <div class="menu-list-item">
-                            <span class="item-name">Bologna - Thick sliced and fried like at home</span>
+                            <span class="item-name">
+                                <span class="item-title">Bologna</span>
+                                <span class="item-description">Thick sliced and fried like at home</span>
+                            </span>
                             <span class="item-price">$3.75</span>
                         </div>
                         <div class="menu-list-item">
@@ -173,11 +202,17 @@
                             <span class="item-price">$6.49</span>
                         </div>
                         <div class="menu-list-item">
-                            <span class="item-name">Philly Cheesesteak - Comes w/ melted cheese</span>
+                            <span class="item-name">
+                                <span class="item-title">Philly Cheesesteak</span>
+                                <span class="item-description">Comes w/ melted cheese</span>
+                            </span>
                             <span class="item-price">$7.99</span>
                         </div>
                         <div class="menu-list-item">
-                            <span class="item-name">BLT - Try with cheese and miracle whip</span>
+                            <span class="item-name">
+                                <span class="item-title">BLT</span>
+                                <span class="item-description">Try with cheese and miracle whip</span>
+                            </span>
                             <span class="item-price">$5.25</span>
                         </div>
                         <div class="menu-list-item">
@@ -189,13 +224,16 @@
                             <span class="item-price">$1.99</span>
                         </div>
                         <div class="menu-list-item">
-                            <span class="item-name">Hot Italian Sub - Ham, Salami, Provolone Cheese, Lettuce, Tomato, Italian dressing</span>
+                            <span class="item-name">
+                                <span class="item-title">Hot Italian Sub</span>
+                                <span class="item-description">Ham, Salami, Provolone Cheese, Lettuce, Tomato, Italian dressing</span>
+                            </span>
                             <span class="item-price">$6.99</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="menu-category">
+                <div class="menu-category" id="appetizers">
                     <h2>Appetizers & Sides</h2>
                     <div class="menu-list">
                         <div class="menu-list-item">
@@ -331,13 +369,16 @@
                             <span class="item-price">$7.99</span>
                         </div>
                         <div class="menu-list-item">
-                            <span class="item-name">Taco in a Bag (Sour Cream Extra)</span>
+                            <span class="item-name">
+                                <span class="item-title">Taco in a Bag (Sour Cream Extra)</span>
+                                <span class="item-description">Taco meat, chips, cheese, lettuce, tomato, & taco sauce</span>
+                            </span>
                             <span class="item-price">$6.50</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="menu-category">
+                <div class="menu-category" id="soups-salads">
                     <h2>Homemade Soups & Salads</h2>
                     <p class="category-note">Vegetable, White Beans & Cornbread or Chili</p>
                     <div class="menu-list">
@@ -360,7 +401,7 @@
                     </div>
                 </div>
 
-                <div class="menu-category">
+                <div class="menu-category" id="entrees">
                     <h2>Entree Baskets</h2>
                     <p class="category-note">Served with crinkle fries, baked beans & slaw.</p>
                     <div class="menu-list">
@@ -385,6 +426,287 @@
                             <span class="item-price">$11.74</span>
                         </div>
                     </div>
+                </div>
+
+                <div class="menu-category" id="kids">
+                    <h2>Kids Meals</h2>
+                    <p class="category-note">All Kids Meals include the Sandwich, Smiley Fries, Drink, and your choice of cookie or applesauce.</p>
+                    <p class="category-note" style="color: var(--primary); font-weight: bold;">Gallipolis Location Only</p>
+                    <div class="menu-list">
+                        <div class="menu-list-item">
+                            <span class="item-name">4 pc. Chicken Nugget</span>
+                            <span class="item-price">$5.49</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Corn Dog</span>
+                            <span class="item-price">$5.49</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Grilled Cheese</span>
+                            <span class="item-price">$5.49</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Hamburger</span>
+                            <span class="item-price">$5.49</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Hot Dog</span>
+                            <span class="item-price">$5.49</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">PB&J</span>
+                            <span class="item-price">$5.49</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="desserts">
+                    <h2>Desserts & Drinks</h2>
+
+                    <h3 class="dessert-subsection-heading">Ice Cream Delights</h3>
+
+                    <div class="featured-menu-item">
+                        <div class="item-header">
+                            <span class="item-title">Banana Split</span>
+                            <span class="item-price">$5.99</span>
+                        </div>
+                        <p class="item-description">What's a banana split without nuts, whipped cream, and a cherry topping it off! We add them (no extra charge) to our delicious blend of chocolate and vanilla soft serve with strawberry, pineapple, chocolate syrup, and a whole banana. We don't monkey around with this popular recipe!</p>
+                    </div>
+
+                    <div class="featured-menu-item">
+                        <div class="item-header">
+                            <span class="item-title">Turtle Sundae</span>
+                            <span class="item-price">$5.75</span>
+                        </div>
+                        <p class="item-description">Our version of a classic. Vanilla soft served layered with delicious hot fudge and caramel toppings, with walnuts, whipped cream and a red cherry!</p>
+                    </div>
+
+                    <div class="featured-menu-item">
+                        <div class="item-header">
+                            <span class="item-title">Hot Fudge Cake</span>
+                            <span class="item-price">$5.75</span>
+                        </div>
+                        <p class="item-description">A chocolate delight with a chewy brownie cake as foundation for vanilla soft serve, another chewy brownie cake, thick hot fudge, smooth whipped cream, and a red cherry on top!</p>
+                    </div>
+
+                    <div class="featured-menu-item">
+                        <div class="item-header">
+                            <span class="item-title">Strawberry Shortcake</span>
+                            <span class="item-price">$5.75</span>
+                        </div>
+                        <p class="item-description">Strawberries that have been fresh frozen in syrup transform our creamy vanilla soft serve and traditional shortcake into this ever popular all season big treat</p>
+                    </div>
+
+                    <div class="featured-menu-item">
+                        <div class="item-header">
+                            <span class="item-title">Ice-cream Nachos</span>
+                            <span class="item-price">$5.99</span>
+                        </div>
+                        <p class="item-description">Waffle cone chips served with vanilla ice-cream, hot fudge, caramel, whipped cream, cinnamon & a cherry. <strong style="color: var(--primary);">(Gallipolis only)</strong></p>
+                    </div>
+
+                    <h3 class="dessert-subsection-heading">Pies</h3>
+                    <span class="location-badge">Gallipolis Only</span>
+                    <div class="menu-list">
+                        <div class="menu-list-item">
+                            <span class="item-name">Coconut Cream</span>
+                            <span class="item-price">$5.75</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Lemon Meringue</span>
+                            <span class="item-price">$5.75</span>
+                        </div>
+                    </div>
+
+                    <h3 class="dessert-subsection-heading">Cones</h3>
+                    <div class="menu-list">
+                        <div class="menu-list-item">
+                            <span class="item-name">Kid</span>
+                            <span class="item-price">$2.25</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Small</span>
+                            <span class="item-price">$2.75</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Large</span>
+                            <span class="item-price">$3.25</span>
+                        </div>
+                    </div>
+
+                    <h3 class="dessert-subsection-heading">Milkshakes & Coolers</h3>
+                    <p class="category-note">Over 30 different flavors! Add malt for $0.50 extra.</p>
+                    <div class="menu-list">
+                        <div class="menu-list-item">
+                            <span class="item-name">Small</span>
+                            <span class="item-price">$4.99</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Large</span>
+                            <span class="item-price">$6.99</span>
+                        </div>
+                    </div>
+                    <p style="margin-top: 15px; font-weight: 600; color: var(--text-dark);">Flavors:</p>
+                    <div class="flavor-grid">
+                        <div class="flavor-item">Banana</div>
+                        <div class="flavor-item">Blueberry</div>
+                        <div class="flavor-item">Butterscotch</div>
+                        <div class="flavor-item">Caramel</div>
+                        <div class="flavor-item">Cherry</div>
+                        <div class="flavor-item">Chocolate</div>
+                        <div class="flavor-item">Chocolate Banana</div>
+                        <div class="flavor-item">Chocolate Marshmallow</div>
+                        <div class="flavor-item">Chocolate Peanut Butter</div>
+                        <div class="flavor-item">Chocolate Strawberry</div>
+                        <div class="flavor-item">Coffee</div>
+                        <div class="flavor-item">Coffee Caramel</div>
+                        <div class="flavor-item">Creamsicle</div>
+                        <div class="flavor-item">Double Chocolate</div>
+                        <div class="flavor-item">Hot Fudge</div>
+                        <div class="flavor-item">Marshmallow</div>
+                        <div class="flavor-item">Mint</div>
+                        <div class="flavor-item">Mint Chocolate Chip</div>
+                        <div class="flavor-item">Orange Pineapple</div>
+                        <div class="flavor-item">Peach</div>
+                        <div class="flavor-item">Peanut Butter</div>
+                        <div class="flavor-item">Peanut Butter Marshmallow</div>
+                        <div class="flavor-item">Pineapple</div>
+                        <div class="flavor-item">Raspberry</div>
+                        <div class="flavor-item">Root Beer</div>
+                        <div class="flavor-item">Strawberry</div>
+                        <div class="flavor-item">Strawberry Banana</div>
+                        <div class="flavor-item">Vanilla</div>
+                    </div>
+
+                    <h3 class="dessert-subsection-heading">Sundaes</h3>
+                    <p class="category-note">Choose from a multitude of flavors!</p>
+                    <div class="menu-list">
+                        <div class="menu-list-item">
+                            <span class="item-name">Small</span>
+                            <span class="item-price">$3.50</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Large</span>
+                            <span class="item-price">$4.00</span>
+                        </div>
+                    </div>
+
+                    <h3 class="dessert-subsection-heading">Bulk Soft Serve</h3>
+                    <div class="menu-list">
+                        <div class="menu-list-item">
+                            <span class="item-name">Pints</span>
+                            <span class="item-price">$4.00</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Quarts</span>
+                            <span class="item-price">$6.00</span>
+                        </div>
+                    </div>
+
+                    <h3 class="dessert-subsection-heading">Flurries</h3>
+                    <span class="location-badge">Gallipolis Only</span>
+                    <p class="category-note">$5.99 - Oreo, Butterfinger, M&M's, Reese Cup, Strawberry Cheesecake, Cheesecake, Cookie Dough & More!</p>
+
+                    <h3 class="dessert-subsection-heading">Floats</h3>
+                    <div class="menu-list">
+                        <div class="menu-list-item">
+                            <span class="item-name">Pop & Slush Floats</span>
+                            <span class="item-price">$3.75</span>
+                        </div>
+                    </div>
+
+                    <h3 class="dessert-subsection-heading">Slushes</h3>
+                    <div class="menu-list">
+                        <div class="menu-list-item">
+                            <span class="item-name">Small</span>
+                            <span class="item-price">$2.80</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Medium</span>
+                            <span class="item-price">$2.95</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Large</span>
+                            <span class="item-price">$3.10</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Jumbo</span>
+                            <span class="item-price">$3.65</span>
+                        </div>
+                    </div>
+                    <p style="margin-top: 15px; font-weight: 600; color: var(--text-dark);">Flavors:</p>
+                    <div class="flavor-grid">
+                        <div class="flavor-item">Lemonade</div>
+                        <div class="flavor-item">Strawberry Lemonade</div>
+                        <div class="flavor-item">Peach Lemonade</div>
+                        <div class="flavor-item">Cherry Lemonade</div>
+                        <div class="flavor-item">Watermelon Lemonade</div>
+                    </div>
+
+                    <h3 class="dessert-subsection-heading">Pepsi Products, Tea, & Lemonade</h3>
+                    <div class="menu-list">
+                        <div class="menu-list-item">
+                            <span class="item-name">Small</span>
+                            <span class="item-price">$2.60</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Medium</span>
+                            <span class="item-price">$2.75</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Large</span>
+                            <span class="item-price">$2.90</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Jumbo</span>
+                            <span class="item-price">$3.45</span>
+                        </div>
+                    </div>
+
+                    <h3 class="dessert-subsection-heading">Hot Drinks</h3>
+                    <div class="menu-list">
+                        <div class="menu-list-item">
+                            <span class="item-name">Coffee</span>
+                            <span class="item-price">$1.50</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Hot Chocolate</span>
+                            <span class="item-price">$1.50</span>
+                        </div>
+                    </div>
+
+                    <h3 class="dessert-subsection-heading">Other</h3>
+                    <div class="menu-list">
+                        <div class="menu-list-item">
+                            <span class="item-name">Milk</span>
+                            <span class="item-price">$1.50</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Bottled Water</span>
+                            <span class="item-price">$1.25</span>
+                        </div>
+                        <div class="menu-list-item">
+                            <span class="item-name">Bagged Ice</span>
+                            <span class="item-price">$1.99</span>
+                        </div>
+                    </div>
+
+                    <h3 class="dessert-subsection-heading">Thrive Farmer's Cold Brew</h3>
+                    <span class="location-badge">Gallipolis Only</span>
+                    <p style="margin-top: 15px; font-weight: 600; color: var(--text-dark);">Flavors:</p>
+                    <div class="flavor-grid">
+                        <div class="flavor-item">Vanilla</div>
+                        <div class="flavor-item">Sugar-free Vanilla</div>
+                        <div class="flavor-item">Caramel</div>
+                        <div class="flavor-item">Banana Brûlée</div>
+                        <div class="flavor-item">Samoa</div>
+                        <div class="flavor-item">Blondie</div>
+                        <div class="flavor-item">Brown Sugar Cinnamon</div>
+                        <div class="flavor-item">Pumpkin</div>
+                        <div class="flavor-item">"The Miley Blu" (Blueberry Muffin)</div>
+                    </div>
+                    <p style="margin-top: 15px; font-weight: 600; color: var(--text-dark);">Add-ons:</p>
+                    <p class="category-note">Caramel Drizzle, Chocolate Drizzle, Sweet Cream Cold Foam and Cinnamon Powder</p>
                 </div>
             </div>
         </section>

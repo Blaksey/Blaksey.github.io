@@ -1,20 +1,19 @@
 /* CSS Variables */
 :root {
     /* Primary Colors */
-    --primary-red: #d32f2f;
-    --primary-red-light: #f44336;
-    --primary-red-dark: #c2185b;
+    --primary: #223377;
+    --primary-light: #4477CC;
 
     /* Neutral Colors */
     --text-dark: #333;
     --text-light: #666;
     --white: #fff;
-    --gray-light: #f5f5f5;
+    --gray-light: #e8e8e8;
     --gray-medium: #e0e0e0;
 
     /* Shadows */
-    --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
-    --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.15);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
     --shadow-lg: 0 4px 8px rgba(0,0,0,0.2);
 
     /* Transitions */
@@ -31,6 +30,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 60px; /* Accounts for sticky navbar + subnav height */
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -45,7 +49,7 @@ body {
 
 /* Navigation */
 .navbar {
-    background-color: var(--primary-red);
+    background-color: var(--primary);
     color: var(--white);
     padding: 1rem 0;
     position: sticky;
@@ -117,9 +121,50 @@ body {
     transition: all 0.3s;
 }
 
+/* Menu Sub-Navigation */
+.menu-subnav {
+    background-color: var(--white);
+    border-bottom: 2px solid var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: var(--shadow-sm);
+}
+
+.subnav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: center;
+}
+
+.subnav-link {
+    padding: 15px 20px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-bottom: 3px solid transparent;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.subnav-link:hover {
+    background-color: var(--gray-light);
+    border-bottom-color: var(--primary);
+}
+
+.subnav-link.active {
+    border-bottom-color: var(--primary);
+    font-weight: 600;
+}
+
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-light) 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     color: var(--white);
     padding: 100px 20px;
     text-align: center;
@@ -148,7 +193,7 @@ body {
     display: inline-block;
     padding: 12px 30px;
     background-color: var(--white);
-    color: var(--primary-red);
+    color: var(--primary);
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -161,7 +206,7 @@ body {
 }
 
 .btn-secondary {
-    background-color: var(--primary-red);
+    background-color: var(--primary);
     color: var(--white);
 }
 
@@ -194,7 +239,7 @@ body {
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--primary-red);
+    color: var(--primary);
 }
 
 /* Call to Action */
@@ -224,7 +269,7 @@ body {
 .content-section h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--primary-red);
+    color: var(--primary);
 }
 
 .content-section h2 {
@@ -243,7 +288,7 @@ body {
 .about-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--primary-red);
+    color: var(--primary);
     text-align: center;
 }
 
@@ -269,7 +314,7 @@ body {
 }
 
 .menu-info h3 {
-    color: var(--primary-red);
+    color: var(--primary);
     margin-bottom: 0.5rem;
     margin-top: 1rem;
 }
@@ -291,7 +336,7 @@ body {
 
 .menu-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 10px;
     margin-top: 20px;
 }
@@ -305,19 +350,127 @@ body {
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     gap: 15px;
+    max-width: 500px;
 }
 
 .menu-list-item .item-name {
     flex: 1;
     color: var(--text-dark);
     font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-list-item .item-name .item-description {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
 }
 
 .menu-list-item .item-price {
     font-weight: bold;
-    color: var(--primary-red);
+    color: var(--primary);
     font-size: 1rem;
     white-space: nowrap;
+}
+
+/* Featured Menu Items (with longer descriptions) */
+.featured-menu-item {
+    background: var(--white);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.featured-menu-item .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    gap: 15px;
+}
+
+.featured-menu-item .item-title {
+    font-weight: 600;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+}
+
+.featured-menu-item .item-price {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.featured-menu-item .item-description {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Dessert Subsection Headings */
+.dessert-subsection-heading {
+    margin-top: 30px;
+    color: var(--primary);
+}
+
+/* Flavor Grid for multiple flavor listings */
+.flavor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    margin-top: 15px;
+    padding: 15px;
+    background: var(--gray-light);
+    border-radius: var(--border-radius);
+}
+
+.flavor-item {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    padding: 4px 0;
+}
+
+/* Size pricing list */
+.size-pricing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px;
+    padding: 15px;
+    background: var(--gray-light);
+    border-radius: var(--border-radius);
+}
+
+.size-pricing .size-item {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.size-pricing .size-name {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.size-pricing .size-price {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Location indicator */
+.location-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .menu-items {
@@ -335,7 +488,7 @@ body {
 }
 
 .menu-item h3 {
-    color: var(--primary-red);
+    color: var(--primary);
     margin-bottom: 0.5rem;
 }
 
@@ -360,7 +513,7 @@ body {
 }
 
 .location-card h3 {
-    color: var(--primary-red);
+    color: var(--primary);
     margin-bottom: 1rem;
 }
 
@@ -389,7 +542,7 @@ body {
 }
 
 .apparel-item h3 {
-    color: var(--primary-red);
+    color: var(--primary);
     margin: 1rem 0;
 }
 
@@ -475,7 +628,7 @@ body {
 .form-group textarea:focus,
 .form-group select:focus {
     outline: none;
-    border-color: var(--primary-red);
+    border-color: var(--primary);
 }
 
 /* Timeline */
@@ -501,12 +654,12 @@ body {
     top: 0;
     width: 20px;
     height: 20px;
-    background-color: var(--primary-red);
+    background-color: var(--primary);
     border-radius: 50%;
 }
 
 .timeline-item h3 {
-    color: var(--primary-red);
+    color: var(--primary);
     margin-bottom: 1rem;
 }
 
@@ -537,7 +690,7 @@ footer {
         top: 100%;
         left: 0;
         right: 0;
-        background-color: var(--primary-red);
+        background-color: var(--primary);
         flex-direction: column;
         padding: 1rem 0;
         gap: 0;
@@ -581,6 +734,16 @@ footer {
     .timeline-item::before {
         left: -20px;
     }
+
+    .subnav-container {
+        gap: 0;
+        padding: 0 10px;
+    }
+
+    .subnav-link {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -598,5 +761,10 @@ footer {
 
     .nav-container {
         padding: 0 15px;
+    }
+
+    .subnav-link {
+        padding: 10px 8px;
+        font-size: 0.8rem;
     }
 }

@@ -59,4 +59,68 @@ document.addEventListener('DOMContentLoaded', async function() {
             navMenu.classList.remove('active');
         }
     });
+
+    // Menu sub-navigation smooth scrolling and active state
+    const subnavLinks = document.querySelectorAll('.subnav-link');
+
+    if (subnavLinks.length > 0) {
+        // Smooth scroll to sections (handled by CSS scroll-behavior and scroll-padding-top)
+        subnavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Highlight active section on scroll
+        const sections = Array.from(subnavLinks).map(link => {
+            const id = link.getAttribute('href').substring(1);
+            return document.getElementById(id);
+        }).filter(section => section !== null);
+
+        function updateActiveLink() {
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+            const subnavHeight = document.querySelector('.menu-subnav')?.offsetHeight || 0;
+            const scrollPosition = window.scrollY + navbarHeight + subnavHeight + 100;
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            subnavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Update on scroll with throttling for performance
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateActiveLink();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Initial update
+        updateActiveLink();
+    }
 });
