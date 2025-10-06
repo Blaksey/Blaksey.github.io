@@ -692,6 +692,58 @@ footer {
     margin-top: 40px;
 }
 
+.social-media {
+    margin-bottom: 20px;
+}
+
+.social-media h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-fast);
+    font-weight: 500;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.social-link.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-link.facebook:hover {
+    background-color: #1877f2;
+}
+
+.social-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+footer p {
+    margin: 0;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .menu-toggle {
