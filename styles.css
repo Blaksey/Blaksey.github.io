@@ -125,10 +125,17 @@ body {
 .menu-subnav {
     background-color: var(--white);
     border-bottom: 2px solid var(--primary);
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 999;
     box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.menu-subnav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .subnav-container {
@@ -757,15 +764,16 @@ footer p {
         right: 0;
         background-color: var(--primary);
         flex-direction: column;
-        padding: 1rem 0;
+        padding: 0;
         gap: 0;
         max-height: 0;
         overflow: hidden;
-        transition: max-height var(--transition-fast) ease-out;
+        transition: max-height var(--transition-fast) ease-out, padding var(--transition-fast) ease-out;
     }
 
     .nav-menu.active {
         max-height: 500px;
+        padding: 1rem 0;
     }
 
     .nav-menu li {

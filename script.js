@@ -62,8 +62,24 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Menu sub-navigation smooth scrolling and active state
     const subnavLinks = document.querySelectorAll('.subnav-link');
+    const menuSubnav = document.querySelector('.menu-subnav');
 
-    if (subnavLinks.length > 0) {
+    if (subnavLinks.length > 0 && menuSubnav) {
+        // Store the original position of the subnav
+        const subnavOffset = menuSubnav.offsetTop;
+
+        // Handle sticky subnav on scroll
+        function handleSubnavSticky() {
+            const navbar = document.querySelector('.navbar');
+            const navbarHeight = navbar?.offsetHeight || 0;
+
+            if (window.scrollY > subnavOffset - navbarHeight) {
+                menuSubnav.classList.add('sticky');
+            } else {
+                menuSubnav.classList.remove('sticky');
+            }
+        }
+
         // Smooth scroll to sections (handled by CSS scroll-behavior and scroll-padding-top)
         subnavLinks.forEach(link => {
             link.addEventListener('click', function(e) {
@@ -113,6 +129,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         window.addEventListener('scroll', function() {
             if (!ticking) {
                 window.requestAnimationFrame(function() {
+                    handleSubnavSticky();
                     updateActiveLink();
                     ticking = false;
                 });
@@ -121,6 +138,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
 
         // Initial update
+        handleSubnavSticky();
         updateActiveLink();
     }
 });
