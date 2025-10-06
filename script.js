@@ -30,6 +30,13 @@ document.addEventListener('DOMContentLoaded', async function() {
     await loadComponent('navbar-placeholder', 'navbar.html');
     await loadComponent('footer-placeholder', 'footer.html');
 
+    // Move menu subnav inside navbar placeholder if it exists
+    const menuSubnav = document.querySelector('.menu-subnav');
+    const navbarPlaceholder = document.getElementById('navbar-placeholder');
+    if (menuSubnav && navbarPlaceholder) {
+        navbarPlaceholder.appendChild(menuSubnav);
+    }
+
     // Set active nav link
     setActiveNavLink();
 
@@ -62,24 +69,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // Menu sub-navigation smooth scrolling and active state
     const subnavLinks = document.querySelectorAll('.subnav-link');
-    const menuSubnav = document.querySelector('.menu-subnav');
 
-    if (subnavLinks.length > 0 && menuSubnav) {
-        // Store the original position of the subnav
-        const subnavOffset = menuSubnav.offsetTop;
-
-        // Handle sticky subnav on scroll
-        function handleSubnavSticky() {
-            const navbar = document.querySelector('.navbar');
-            const navbarHeight = navbar?.offsetHeight || 0;
-
-            if (window.scrollY > subnavOffset - navbarHeight) {
-                menuSubnav.classList.add('sticky');
-            } else {
-                menuSubnav.classList.remove('sticky');
-            }
-        }
-
+    if (subnavLinks.length > 0) {
         // Smooth scroll to sections (handled by CSS scroll-behavior and scroll-padding-top)
         subnavLinks.forEach(link => {
             link.addEventListener('click', function(e) {
@@ -129,7 +120,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         window.addEventListener('scroll', function() {
             if (!ticking) {
                 window.requestAnimationFrame(function() {
-                    handleSubnavSticky();
                     updateActiveLink();
                     ticking = false;
                 });
@@ -138,7 +128,43 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
 
         // Initial update
-        handleSubnavSticky();
         updateActiveLink();
+    }
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+
+    if (backToTopButton) {
+        // Show/hide button based on scroll position
+        function toggleBackToTopButton() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        }
+
+        // Scroll to top when clicked
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add to existing scroll listener
+        let backToTopTicking = false;
+        window.addEventListener('scroll', function() {
+            if (!backToTopTicking) {
+                window.requestAnimationFrame(function() {
+                    toggleBackToTopButton();
+                    backToTopTicking = false;
+                });
+                backToTopTicking = true;
+            }
+        });
+
+        // Initial check
+        toggleBackToTopButton();
     }
 });
