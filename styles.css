@@ -306,6 +306,15 @@ body {
     margin-bottom: 40px;
 }
 
+.menu-pdf-links {
+    text-align: center;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
 .menu-info {
     background: var(--gray-light);
     padding: 20px;
